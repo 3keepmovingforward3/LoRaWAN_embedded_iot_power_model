@@ -1,4 +1,5 @@
 import node
+import numpy as np
 
 
 def main():
@@ -8,5 +9,10 @@ def main():
     state4 = node.State("Alert", 1260**-9, 25320**-9)
 
 
+def run():
+    daysPerYear = np.linspace(1, 366, 366) # time vector
+
+
 if __name__ == '__main__':
     main()
+    run()
