@@ -10,7 +10,7 @@ def main():
 
 
 def run():
-    daysPerYear = np.linspace(1, 366, 366) # time vector
+    daysperyear = np.linspace(1, 366, 366) # time vector
 
 
 if __name__ == '__main__':
