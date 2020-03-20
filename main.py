@@ -1,18 +1,19 @@
 import node
-import numpy as np
 
+# Global state objects
+# State Object Arguments
+# String: state name
+# qp: Quiescent power; aka static power
+# dp: Dynamic power
+#
+batterycapacity = 6600e-6 # Returns a float multiplied by the specified power of 10.
+sleep = node.State("Sleep", 8e-6, 8e-6)
+listen = node.State("Wakeup & Listen", 500e-6, 1000e-6)
+camera = node.State("Camera Wakeup & Image Recognition", 1100e-6, 2200e-9)
+alert = node.State("Alert", 1260e-6, 25320e-6)
 
 def main():
-    state1 = node.State("Sleep", 8**-9, 8**-9)
-    state2 = node.State("Wakeup & Listen", 500**-6, 1000**-6)
-    state3 = node.State("Camera Wakeup & Image Recognition", 1100**-6, 2200**-9)
-    state4 = node.State("Alert", 1260**-9, 25320**-9)
-
-
-def run():
-    daysperyear = np.linspace(1, 366, 366) # time vector
-
-
+    hour = batterycapacity - ((0.9*sleep.qp) + (0.1*listen.qp)) # alpha simulation
+    
 if __name__ == '__main__':
     main()
-    run()
