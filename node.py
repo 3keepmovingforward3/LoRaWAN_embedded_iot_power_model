@@ -1,5 +1,6 @@
 import random as random
 
+
 class State:
 
     # instance attribute
