@@ -1,5 +1,4 @@
 import math
-
 import node
 import random as random
 
