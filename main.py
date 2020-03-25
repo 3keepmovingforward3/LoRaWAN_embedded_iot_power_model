@@ -28,11 +28,11 @@ def charge(t):
 
 def main():
 
-    #  Day 365 = Winter Solstice
+    #  Day 364 = Winter Solstice
     #  Day 1 = Summer Solstice
     #  Normalized to battery
     #
-    print("{:.3e}".format(((battery_capacity+charge(365)) -
+    print("{:.3e}".format(((battery_capacity+charge(364)) -
                            ((0.9*sleep.qp*24) + (0.1*listen.qp)*24)))+"mAh after 24 hours")  # alpha simulation
 
 
