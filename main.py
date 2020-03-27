@@ -1,4 +1,3 @@
-import math
 import node
 import numpy as np
 import matplotlib.pyplot as plt
@@ -10,18 +9,12 @@ import matplotlib.pyplot as plt
 # dp: Dynamic power
 # Battery Capacity is numpy vector
 battery_capacity = np.linspace(2000, 18000, endpoint=True)
-days = np.linspace(4, 10)
+days = np.linspace(4, 15)
 
 sleep = node.State("Sleep", 8, 8)
 listen = node.State("Wakeup & Listen", 500, 1000)
 camera = node.State("Camera Wakeup & Image Recognition", 1100, 2200)
 alert = node.State("Alert", 1260, 2520)
-
-
-#  Location: Rohnert Park, California
-#
-def charge(t):
-    return (2.675 * math.cos(2 * t * math.pi / 365) + 12.175) * 500e-6
 
 
 def main():
@@ -38,6 +31,7 @@ def main():
     plt.xlabel('Prospective Battery Size in milli-amp hours (mAh)')
     plt.ylabel('Power Model 4-10 day range')
     plt.show()
+
 
 if __name__ == '__main__':
     main()
